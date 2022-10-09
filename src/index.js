@@ -15,7 +15,7 @@ const  calcFusion = ()=>{
     
     if(init !=0 && init >= 1){
         let result = end - init + 1
-        span.innerText = result
+        span.innerHTML = `<span class="box mt-4">Quantidade total de fusões: ${result}</span>`
         console.log(result, init, end)
     }
     
