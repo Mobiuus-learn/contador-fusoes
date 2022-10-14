@@ -10,17 +10,12 @@
 <body class="is-mobile has-background-grey-lighter max">
 
     <div class="container column ">
-        <!-- <div class="box h-ali">
-    
-            <h2>Cabo Alimentador</h2>
-            <input type="number" class="input is-primary" id="cable-ali" placeholder="informe o cabo alimentador">
-            
-        </div> -->
-            
+       
 
         <div class=" box second-cont">
             <label for="alimentador" class="label mt-8">Cabo Alimentador:</label>
-            <input type="number" name="alimentador" id="cable-ali" class="input is-medium mb-4 " placeholder="Informe a qnt. de fibras no Alimentador">
+            <input type="number" name="alimentador" id="cable-ali" class="input is-medium mb-4 required " 
+            placeholder="Informe a qnt. de fibras no Alimentador" required>
             
             <label for="fib-ini" class="label mt-8">Fibra inicial:</label>
             <input type="number" class="input is-medium mb-5" id="fib-ini" placeholder="informe o valor inical">
@@ -35,6 +30,7 @@
         </div>
         <div class="fusion-result"></div>
     </div>
-    <script src="./src/index.js" defer></script>
+    <script src="./src/index.js" defer type="module"></script>
+    <script src="./src/cores.mjs" defer type="module"></script>
 </body>
 </html>
