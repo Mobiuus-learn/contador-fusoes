@@ -13,49 +13,46 @@ const validInput = [12, 24, 36, 48, 72, 144];
 
 // grupos
 const calcGroups = (res) => {
-  let groupM = parseInt(alimentador.value)
-  let handle = groupM
-	let fiberGroup
+  let groupM = parseInt(alimentador.value);
+  let handle = groupM;
+  let fiberGroup;
 
-	let groups
-	switch(handle){
-		case 12:{
-			fiberGroup = 12
-			
-			groups =  Math.ceil(res / fiberGroup)
-			break
-			
+  let groups;
+  switch (handle) {
+    case 12: {
+      fiberGroup = 12;
 
-		}
-		case 24:{
-			fiberGroup = 6
-			groups =  Math.ceil(res / fiberGroup)
-			break
-		}
-	
-		case 36:{
-			fiberGroup = 6
-			groups =  Math.ceil(res / fiberGroup)
-			break
-		}
-		case 48:{
-			fiberGroup = 12
-			groups =  Math.ceil(res / fiberGroup)
-			break
-		}
-		case 72:{
-			fiberGroup = 12
-			groups =  Math.ceil(res / fiberGroup)
-			break
-		}
-		case 144:{
-			fiberGroup = 12
-			groups =  Math.ceil(res / fiberGroup)
-			break
-		}
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
+    case 24: {
+      fiberGroup = 6;
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
 
-	}
-	return groups
+    case 36: {
+      fiberGroup = 6;
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
+    case 48: {
+      fiberGroup = 12;
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
+    case 72: {
+      fiberGroup = 12;
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
+    case 144: {
+      fiberGroup = 12;
+      groups = Math.ceil(res / fiberGroup);
+      break;
+    }
+  }
+  return groups;
 };
 
 const calcFusion = () => {
@@ -77,6 +74,10 @@ const calcFusion = () => {
   }
 };
 const show = (res) => {
+  if (res > alimentador.value) {
+    return (span.innerHTML = `<span class="box mt-4 has-text-danger">Error: A quantidade de fusões é maior que a quantidade de fibras presentes no cabo </span>`);
+  }
+
   return (span.innerHTML = `<span class="box mt-4 has-text-success">Quantidade total de fusões: ${res};
 		<span style="color:red">Quantidade de grupos: ${calcGroups(res)}</span>
 	</span>`);
