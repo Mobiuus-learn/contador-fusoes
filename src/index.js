@@ -1,5 +1,3 @@
-import { cores } from "./cores.mjs";
-
 const fibraIni = document.querySelector("#fib-ini");
 const fibraFim = document.querySelector("#fib-fim");
 const button = document.querySelector("#btn-send");
@@ -14,41 +12,41 @@ const validInput = [12, 24, 36, 48, 72, 144];
 // grupos
 const calcGroups = (res) => {
   let groupM = parseInt(alimentador.value);
-  let handle = groupM;
-  let fiberGroup;
+  groupM;
+  let fiberPerGroup;
 
   let groups;
-  switch (handle) {
+  switch (groupM) {
     case 12: {
-      fiberGroup = 12;
+      fiberPerGroup = 12;
 
-      groups = Math.ceil(res / fiberGroup);
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
     case 24: {
-      fiberGroup = 6;
-      groups = Math.ceil(res / fiberGroup);
+      fiberPerGroup = 6;
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
 
     case 36: {
-      fiberGroup = 6;
-      groups = Math.ceil(res / fiberGroup);
+      fiberPerGroup = 6;
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
     case 48: {
-      fiberGroup = 12;
-      groups = Math.ceil(res / fiberGroup);
+      fiberPerGroup = 12;
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
     case 72: {
-      fiberGroup = 12;
-      groups = Math.ceil(res / fiberGroup);
+      fiberPerGroup = 12;
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
     case 144: {
-      fiberGroup = 12;
-      groups = Math.ceil(res / fiberGroup);
+      fiberPerGroup = 12;
+      groups = Math.ceil(res / fiberPerGroup);
       break;
     }
   }
@@ -78,7 +76,7 @@ const show = (res) => {
     return (span.innerHTML = `<span class="box mt-4 has-text-danger">Error: A quantidade de fusões é maior que a quantidade de fibras presentes no cabo </span>`);
   }
 
-  return (span.innerHTML = `<span class="box mt-4 has-text-success">Quantidade total de fusões: ${res};
+  return (span.innerHTML = `<span class="box mt-4 " style="color:red">Quantidade total de fusões: ${res};<br>
 		<span style="color:red">Quantidade de grupos: ${calcGroups(res)}</span>
 	</span>`);
 };
@@ -88,7 +86,7 @@ const checkValidate = () => {
   const valid = validInput.includes(ali);
 
   if (!valid || 0) {
-    return alert("Informe uma das opções válidas");
+    return alert(`Informe uma das opções válidas correspondente ao cabo alimentador: ${validInput}`)
   }
   if (!ali) {
     return alert("Por favor, informe o cabo alimentador");
